@@ -19,7 +19,7 @@ class Frame(tk.Frame):
         super().__init__(root,width=800,height=700)
         self.root=root
         self.pack()
-        self.config(bg='green')
+        #self.config(bg='white')
         self.etiquetas()
         self.options()
     
@@ -31,10 +31,26 @@ class Frame(tk.Frame):
         self.label_proceso=tk.Label(self,text='Seleccion de Proceso')
         self.label_proceso.config(font=('Arial',12,'bold'))
         self.label_proceso.grid(row=2,column=0,padx=20,pady=20)
+        
+        self.boton1=tk.Button(self,text='Subir')
+        self.boton1.config(width=20,font=('Arial',12,'bold'),
+                           fg='#080808',bg='#E58006',
+                           cursor='hand2',activebackground='#9EAF98')
+        self.boton1.grid(row=5,column=0,padx=20,pady=20)
+        
+        self.boton1=tk.Button(self,text='Filtrar')
+        self.boton1.config(width=20,font=('Arial',12,'bold'),
+                           fg='#080808',bg='#15C833',
+                           cursor='hand2',activebackground='#9EAF98')
+        self.boton1.grid(row=3,column=1,padx=20,pady=20)
+        
+        self.boton1=tk.Button(self,text='Guardar')
+        self.boton1.config(width=20,font=('Arial',12,'bold'),
+                           fg='#080808',bg='#7DA2C4',
+                           cursor='hand2',activebackground='#9EAF98')
+        self.boton1.grid(row=5,column=1,padx=20,pady=20)
     
     def options(self):
-        style = tk.ttk.Style()
-        style.configure('Menu.TButton', font=('Arial', 12, 'bold'))
         self.met = tk.StringVar(self.root)
         self.met.set("Seleccione un metodo")
         submenu = tk.OptionMenu(self, self.met, "Metodo 1", "Metodo 2")
@@ -46,6 +62,9 @@ class Frame(tk.Frame):
                                  "Proceso 7", "Proceso 8","Proceso 9",
                                 "Proceso 10","Proceso 11", "Proceso 12")
         submenu1.grid(row=3, column=0, padx=20, pady=20)
+        
+        
+        
         
         
        
